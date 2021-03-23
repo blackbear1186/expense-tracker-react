@@ -3,7 +3,7 @@
   2. add value and onChange to input 
   3. import useContext, Appcontext
   4. destructure dispatch equal to useContext and pass AppContext 
-  5. In onSubmit function add expense with key-value pairs
+  5. In onSubmit function add expense object with key-value pairs
   6. Add dispatch function with type and payload
 */
 import { nanoid } from "nanoid";
@@ -13,12 +13,11 @@ import { AppContext } from '../../context/AppContext'
 
 const AddExpense = () => {
   const { dispatch } = useContext(AppContext)
-
   const [name, setName] = useState('')
   const [cost, setCost] = useState('')
 
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
 
     const expense = {
       id: nanoid(),
