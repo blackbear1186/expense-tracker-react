@@ -1,13 +1,11 @@
-import React from "react";
-import { nanoid } from 'nanoid'
+import React, {useContext} from "react";
 import ExpenseItem from './ExpenseItem'
+import { AppContext } from '../../context/AppContext'
 
 const ExpenseList = () => {
-  const expenses = [
-    { id: nanoid(), name: 'Groceries', cost: 300},
-    { id: nanoid(), name: 'Gas', cost: 150},
-    { id: nanoid(), name: 'Eating Out', cost: 100},
-  ]
+
+  const { expenses } = useContext(AppContext)
+
   return (
     <ul className='list-group mb-3 mt-3'>
       {expenses.map(expense => (

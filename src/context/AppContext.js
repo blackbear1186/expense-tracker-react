@@ -13,8 +13,8 @@ export const AppReducer = (state, action) => {
 const initialState = {
   budget: 3000,
   expenses: [
-    { id: nanoid(), name: "Groceries", cost: 300 },
-    { id: nanoid(), name: "Gas", cost: 150 },
+    { id: nanoid(), name: "Groceries", cost: 400 },
+    { id: nanoid(), name: "Gas", cost: 100 },
     { id: nanoid(), name: "Eating Out", cost: 100 },
   ],
 };
