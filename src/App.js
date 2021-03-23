@@ -5,7 +5,7 @@ import Remaining from "./components/incomeExpense/Remaining";
 import Expense from "./components/incomeExpense/Expense";
 import ExpenseList from "./components/expenses/ExpenseList";
 import AddExpense from "./components/expenses/AddExpense";
-import {AppProvider} from './context/AppContext'
+import { AppProvider } from "./context/AppContext";
 
 function App() {
   return (
