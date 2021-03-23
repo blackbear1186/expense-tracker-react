@@ -2,14 +2,26 @@ import React, {useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 
 const Remaining = () => {
+  // 1. get budget and expenses from AppContext
   const { budget, expenses } = useContext(AppContext)
-  const totalExpense = expenses.reduce((total, item) => {
-    return (total = total + item.cost)
+  // 2. get expenses total using reduce function, set to variable and 
+  // initialize to zero
+  const totalExpense = expenses.reduce((total, expense) => {
+    return (
+      total += expense.cost
+    )
   }, 0)
-  const remaining = budget - totalExpense;
+
+
+  // 3. set total after subtracting totalexpense from budget to remaining var
+  const remainder = budget - totalExpense;
+
+  // create conditional alert if totalExpense is greater than budget return alert-danger
+  const alertType = totalExpense > budget ? 'alert alert-danger' : 'alert alert-success';
+
   return (
-      <div className='alert alert-success remaining'>
-        <span className='remaining-span'>Remaining: ${remaining}</span>
+      <div className={`${alertType} remaining`}>
+        <span className='remaining-span'>Remaining: ${remainder}</span>
       </div>
   )
 }

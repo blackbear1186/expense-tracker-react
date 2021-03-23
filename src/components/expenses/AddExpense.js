@@ -12,28 +12,33 @@ import { AppContext } from '../../context/AppContext'
 
 
 const AddExpense = () => {
+  // 1. get dispatch from AppContext
   const { dispatch } = useContext(AppContext)
+  // declare name and cost useState var and initialize with empty string
   const [name, setName] = useState('')
   const [cost, setCost] = useState('')
-
-  const handleSubmit = e => {
+   // create handleSubmit function 
+   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // create expense object and pass id, name, and parseInt cost key-value pair
     const expense = {
       id: nanoid(),
       name: name,
       cost: parseInt(cost)
     }
-    dispatch({
-      type: 'ADD_EXPENSE',
-      payload: expense
-    })
+  // call dispatch function, pass type and payload from object
+
+   dispatch({
+     type: 'ADD_EXPENSE',
+     payload: expense
+   })
+    // clear input field after submit
     setName('')
     setCost('')
-  }
+   }
 
   return (
-    <form onSubmit={handleSubmit} className="container">
+    <form onSubmit={handleSubmit}className="container">
       <div className="row">
         <div className="col">
           <input
@@ -42,6 +47,7 @@ const AddExpense = () => {
             placeholder="Enter an expense"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            autoFocus
           ></input>
         </div>
         <div className="col">

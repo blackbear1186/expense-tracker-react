@@ -4,6 +4,7 @@ import { AppContext} from '../../context/AppContext'
 
 
 const ExpenseList = () => {
+  // get expenses from AppContext
   const { expenses } = useContext(AppContext)
 
   return (

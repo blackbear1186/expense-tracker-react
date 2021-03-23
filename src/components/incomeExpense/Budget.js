@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import { AppContext} from '../../context/AppContext'
 
 const Budget = () => {
+  // get budget from AppContext
   const { budget } = useContext(AppContext)
 
   return (
