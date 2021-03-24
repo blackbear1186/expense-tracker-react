@@ -40,6 +40,13 @@
 .add-expense {
   width: 20em;
 }
+.edit-btn {
+  cursor: pointer;
+}
+.cancel-btn {
+  align-items: center;
+}
+
 @media only screen and (max-width: 770px) {
   .flex-container {
     display: flex;

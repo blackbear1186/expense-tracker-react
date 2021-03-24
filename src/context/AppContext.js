@@ -27,6 +27,13 @@ export const AppReducer = (state, action) => {
           (expense) => expense.id !== action.payload
         ),
       };
+    // create case edit expense
+    case 'EDIT_EXPENSE':
+      // return copy of state and pass action payload to budget
+      return {
+        ...state,
+        budget: action.payload
+      }
     // set default to return state
     default:
       return state;

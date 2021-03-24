@@ -14,7 +14,7 @@ const Expense = () => {
   }, 0)
   return (
     <div className='alert alert-primary expense'>
-      <span>Spent so far: ${totalSpent}</span>
+      <span><strong>Spent so far: </strong>${totalSpent}</span>
     </div>
   )
 }
